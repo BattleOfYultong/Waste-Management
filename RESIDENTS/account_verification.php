@@ -10,6 +10,7 @@
                 $row = mysqli_fetch_assoc($sqlResult);
                 $Name = $row['Name'];
                 $Account_Type = $row['Account_Type'];
+                $accountID = $row['accountID'];
 
                 if($Account_Type == 1){
                     $Role = "Admin";
