@@ -42,27 +42,7 @@ session_start();
         </a>
       
        
-        <a href="wastecollectsched.php" class="list-group-item bg-transparent">
-         <i class="fas fa-comments">
-         </i> 
-         Waste Collection Schedule
-        </a>
-        <a href="monitoring.php" class="list-group-item bg-transparent">
-         <i class="fas fa-cog">
-         </i>
-         Waste Segregation Monitoring
-        </a>
-        <a class="list-group-item bg-transparent">
-         <i class="fas fa-cog">
-         </i>
-         Announcements
-        </a>
        
-        <a href="feedback.php" class="list-group-item bg-transparent">
-         <i class="fas fa-complaints-alt">
-        </i>
-        Feedback
-        </a>
         
         
         <a class="list-group-item bg-transparent">

@@ -100,34 +100,42 @@ session_start();
       <div class="card-header">
         <h1>Complaints</h1>
       </div>
+
+
     <div class="container">
+
+     <?php
+          $sqlFetchComplaint_user = "SELECT c.complaintID, c.accountID, c.Description, c.Address, a.Photo,
+          a.accountID, a.Name FROM complaint_tbl c INNER JOIN account_tbl a ON c.accountID = a.accountID 
+          ";
+          $sqlFetchComplaint_user_result = mysqli_query($connections, $sqlFetchComplaint_user);
+
+          $sqlFetchComplaint_user_store = [];
+
+          if($sqlFetchComplaint_user_result){
+            if(mysqli_num_rows($sqlFetchComplaint_user_result) > 0){
+              while($row = mysqli_fetch_assoc($sqlFetchComplaint_user_result)){
+                $sqlFetchComplaint_user_store[] = $row;
+              }
+            }
+          }
+          
+          ?>
         <table  class="table table-hover text-white">
+          <?php foreach ($sqlFetchComplaint_user_store AS $complaints): ?>
             <div class="complaint"> 
-            <h5>Complaint 1</h5> 
-            <p>Details: Overflowing garbage bins at 123 Main St.</p> 
-            <p>Submitted by: John</p> 
+            <h5>Complaint ID: <?php echo htmlspecialchars($complaints['complaintID']) ?></h5> 
+            <p>Details: <?php echo htmlspecialchars($complaints['Description']) ?></p> 
+            <p>Address: <?php echo htmlspecialchars($complaints['Address']) ?></p>
+            <p>Submitted by: <?php echo htmlspecialchars($complaints['Name']) ?></p> 
             <div class="buttons"> 
                 <button>Resolve</button> 
                 <button class="delete">Delete</button> 
             </div> 
         </div> 
-        <div class="complaint"> 
-            <h5>Complaint 2</h5> 
-            <p>Details: Uncollected waste at 456 Elm St.</p> 
-            <p>Submitted by: Maria Christina</p>
-             <div class="buttons"> 
-                <button>Resolve</button> 
-                <button class="delete">Delete</button> 
-            </div> 
-        </div> 
-        <div class="complaint"> 
-            <h5>Complaint 3</h5> 
-            <p>Details: Illegal dumping at 789 Oak St.</p> 
-            <p>Submitted by: Michael</p> 
-            <div class="buttons"> <button>Resolve</button> 
-                <button class="delete">Delete</button> 
-        </div> 
-    </div> 
+
+        <?php endforeach ?>
+       
 </div>
 </div>
 </div>
