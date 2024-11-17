@@ -5,7 +5,7 @@
   </title>
 <link crossorigin="anonymous" href="bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
   <link href="all.min.css" rel="stylesheet"/>
-  <link href="collection-stats.css" rel="stylesheet"/>
+  <link href="dashboard.css" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
    <link rel="stylesheet" href="../assets/fontawesome-free-6.5.2-web/css/all.min.css">
  </head>
@@ -22,59 +22,63 @@
        </h4>
 
       </div>
-      <div class="card-body">
+
+      <nav class="card-body">
        <ul class="list-group list-group-flush">
-        <li class="list-group-item bg-transparent">
+         <a href="collections-stats.php" class="list-group-item bg-dark text-white">
          <i class="fas fa-home">
          </i>
-         Dashboard
-        </li>
-        <li class="list-group-item bg-transparent">
+          Dashboard
+        </a>
+        <a href="resident-management.php" class="list-group-item bg-transparent">
          <i class="fas fa-bullhorn">
          </i>
          Residents Management
-        </li>
-        <li class="list-group-item bg-transparent">
+        </a>
+        <a href="staff-management.php" class="list-group-item bg-transparent">
          <i class="fas fa-comments">
          </i> 
          Staff Management
-        </li>
-        <li class="list-group-item bg-transparent">
+        </a>
+        <a href="pickup-sched.php" class="list-group-item bg-transparent">
          <i class="fas fa-cog">
          </i>
          Waste Pickup Scheduling
-        </li>
-        <li class="list-group-item bg-transparent">
+        </a>
+        <a href="collections-stats.php" class="list-group-item bg-transparent">
          <i class="fas fa-cog">
          </i>
          Collection Status Management
-        </li>
-        <li class="list-group-item bg-transparent">
+        </a>
+        <a href="notification.php" class="list-group-item bg-transparent">
          
        Notifications
-        </li>
-        <li class="list-group-item bg-transparent">
+        </a>
+        <a href="reports.php" class="list-group-item bg-transparent">
          <i class="fas fa-bell-alt">
         </i>
          Reports
-        </li>
-        <li class="list-group-item bg-transparent">
+        </a>
+        <a href="rules.php" class="list-group-item bg-transparent">
          <i class="fas fa-cog">
          </i>  
          Rules & Policies
-        </li>
-        <li class="list-group-item bg-transparent">
+        </a>
+        <a href="---" class="list-group-item bg-transparent">
          Settings
-        </li>
-        <li class="list-group-item bg-transparent">
+        </a>
+        <a href= "../php/logout.php" class="list-group-item bg-transparent">
          <i class="fas fa-sign-out-alt">
          </i>
          Logout
-        </li>
+        </a>
        </ul>
-      </div>
+      </nav>
      </div>
     </div>
+
+
+
     <div class="content">
     <div class="col-md-9">
      <div class="card mb-4">

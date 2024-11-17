@@ -1,8 +1,91 @@
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+     font-family: 'Roboto', sans-serif;
 }
-body{
-    background-color: ;
+:root{
+    --transtition: 0.1s;
+    --transform: scale(1.1);
+
+}
+section{
+    background: linear-gradient(to right, #C1E899, #94DEA5);
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section form{
+    width: 35%;
+    background-color: #E6F0DC;
+    min-height: 40vh;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   
+}
+form .form-title h1{
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.form-title{
+    text-align: center;
+    margin-top: 10px;
+}
+.form-title h2{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.form-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+.form-button button{
+    padding: 10px;
+    width: 250px;
+    border: none;
+    background-color: #212529;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transtition);
+}
+.system-name{
+    text-align: center;
+}
+.system-name h1{
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.form-button button:hover{
+    transform: var(--transform);
+
+}
+.form-photo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.form-photo img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+.form-photo-input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form-photo-input input{
+    
+    border: 2px solid #fff;
 }
