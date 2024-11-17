@@ -1,23 +1,19 @@
 body {
     font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
     background: linear-gradient(to right, #C1E899, #94DEA5);
-}
-.header {
-    background-color: #94DEA5;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
+    color: #fff;
+    margin: 0;
 }
 
 .card {
     background-color: rgba(255, 255, 255, 0.334);
-    border: none;
+    border-radius: 5px;
 }
+
 .card-header {
     background-color: rgba(255, 255, 255, 0.485);
 }
+
 .card-body {
     background-color: rgba(255, 255, 255, 0);
 }
@@ -25,70 +21,111 @@ body {
 .content {
     flex: 1;
     padding: 20px;
-    background-color: #E6F0DC; 
+    background-color: #E6F0DC;
     border-radius: 10px;
-    border: 10px black;
-  }
-  
-  .content h3 {
+    margin: 20px 0;
+}
+
+.content h3, 
+.content h5 {
     margin-bottom: 20px;
-  }
+}
+
+.header {
+    background-color: rgba(255, 255, 255, 0.334);
+    padding: 10px 0;
+    text-align: center;
+    color: #fff;
+}
 
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
-.profile-dashboard {
-    background: linear-gradient(135deg,#C1E899, #94DEA5);
-    border-radius: 10px;
-    padding: 20px;
     width: 80%;
-    max-width: 1000px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: white;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.485);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.profile-dashboard h2 {
+
+.feedback, .complaint {
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.feedback h3, 
+.complaint h3 {
     margin-top: 0;
 }
-.profile-card {
-    background-color: #C1E899;
-    color: black;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+.buttons {
+    margin-top: 10px;
 }
-.profile-card img {
-    border-radius: 50%;
-    margin-right: 15px;
-}
-.profile-card .info {
-    flex-grow: 1;
-}
-.profile-card .info h3 {
-    margin: 0;
-}
-.profile-card .info p {
-    margin: 5px 0;
-}
-.profile-card .actions {
-    display: flex;
-    align-items: center;
-}
-.profile-card .actions button {
+
+.buttons button {
     background-color: #4CAF50;
     color: white;
     border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
     border-radius: 5px;
-    padding: 10px 15px;
     cursor: pointer;
-    margin-left: 10px;
 }
-.profile-card .actions button:hover {
+
+.buttons button.delete {
+    background-color: #f44336;
+}
+
+.guidelines ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.guidelines ul li {
+    background: #94DEA5;
+    margin: 5px 0;
+    padding: 10px;
+    border-left: 5px solid #4CAF50;
+    color: black;
+}
+
+.report-form {
+    margin-bottom: 20px;
+}
+
+.report-form input[type="text"],
+.report-form textarea,
+.report-form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.report-form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.report-form button:hover {
     background-color: #45a049;
 }
 
+table {
+    flex: 1;
+    padding: 20px;
+    background-color: #E6F0DC;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: black;
+}

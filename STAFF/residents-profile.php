@@ -101,20 +101,51 @@ session_start();
                         <h1>Residents Profile</h1>
                     </div>
                     <div class="container">
+                        <?php 
+                            $sqlFetchResidents = "SELECT *FROM account_tbl WHERE Account_Type = 3";
+                            $sqlFetchResidentsResult = mysqli_query($connections, $sqlFetchResidents);
+
+                            $sqlFetchResidentsGet = [];
+                            if($sqlFetchResidentsResult){
+                                if(mysqli_num_rows($sqlFetchResidentsResult) > 0){
+                                    while($row = mysqli_fetch_assoc($sqlFetchResidentsResult)){
+                                         $sqlFetchResidentsGet[] = $row;
+                                    }
+                                 }
+                            }
+                        ?>
                         <div class="profile-dashboard">
+                            <?php foreach ($sqlFetchResidentsGet AS $residents): ?>
                             <div class="profile-card">
-                                <img class="rounded-circle" height="100" src="pngtree-user-profile-avatar-png-image_13369991.png" width="100"/>
+                                <img class="rounded-circle" height="100" src="<?php echo htmlspecialchars('../uploads/' .($residents['Photo'])) ?>" width="100"/>
                                 <div class="info">
-                                    <h3>John</h3>
-                                    <p>Address: 123 Main St, Barangay 1</p>
-                                    <p>Contact: (123) 456-7890</p>
+                                    <h3><?php echo htmlspecialchars($residents['Name']) ?></h3>
+                                    <p>Address: <?php echo htmlspecialchars($residents['Address']) ?></p>
+                                    <p>Email: <?php echo htmlspecialchars($residents['Email']) ?></p>
                                 </div>
                                 <div class="actions">
-                                    <button type="button" class="btn btn-primary">Edit</button>
+                                   <!-- Button trigger modal -->
+                                  <button
+                                    type="button"
+                                    class="btn btn-primary"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modalId"
+                                    data-name="<?php echo htmlspecialchars($residents['Name']) ?>"
+                                    data-photo="<?php echo htmlspecialchars('../uploads/' . ($residents['Photo'])) ?>"
+                                    data-address="<?php echo htmlspecialchars($residents['Address']) ?>"
+                                    data-email="<?php echo htmlspecialchars($residents['Email']) ?>"
+                                    data-gender="<?php echo htmlspecialchars($residents['Gender']) ?>"
+                                    data-birthday="<?php echo htmlspecialchars($residents['BirthDay']) ?>"
+                                >
+                                    View
+                                </button>
+                                   
+                
                                     <button type="button" class="btn btn-danger">Delete</button>
 
                                 </div>
                             </div>
+                            <?php endforeach ?>
 
 
                         </div>
@@ -122,14 +153,100 @@ session_start();
                 </div>
     </div>
 
+    <!-- View Modal -->
+
+    <!-- Modal -->
+<div class="modal fade" id="modalId" tabindex="-1" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitleId">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="container-md">
+                    <!-- Photo -->
+                    <div class="form-photo mb-3 d-flex justify-content-center align-items-center">
+                        <img id="photoPreview" src="../uploads/sample photo.jpg" style="border-radius: 50%; width: 150px; height:150px;" alt="Preview">
+                    </div>
+
+                    <!-- Email -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                        <input type="email" id="emailInput" class="form-control" placeholder="Email" aria-label="Email">
+                    </div>
+
+                    <!-- Gender -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fas fa-venus-mars"></i></span>
+                        <select id="genderInput" class="form-select" aria-label="Gender">
+                            <option selected>Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Birthday -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+                        <input type="date" id="birthdateInput" class="form-control" aria-label="Birthday">
+                    </div>
+
+                    <!-- Address -->
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                        <input type="text" id="addressInput" class="form-control" placeholder="Address" aria-label="Address">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+            
 
 
-
+ <script src="../assets/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
 
 
 
 
    </div>
 </table>
+
+
+<script src ="../assets/Jquery/jquery.js"></script>
+
+
+ <script>
+// Function to populate modal with data attributes from the button
+function populateUserModal(button) {
+    // Retrieve data from button's attributes
+    const name = $(button).data('name');
+    const photo = $(button).data('photo');
+    const email = $(button).data('email');
+    const birthday = $(button).data('birthday');
+    const address = $(button).data('address');
+    const gender = $(button).data('gender');
+
+    // Populate modal fields
+    $('#emailInput').val(email);
+    $('#genderInput').val(gender);
+    $('#birthdateInput').val(birthday);
+    $('#addressInput').val(address);
+
+    // Update photo preview
+    $('#photoPreview').attr('src', photo || '../uploads/sample photo.jpg');
+}
+
+// Event listener to open modal and populate data
+$(document).on('click', '[data-bs-target="#modalId"]', function () {
+    populateUserModal(this);
+});
+</script>
  </body>
 </html>
