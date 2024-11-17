@@ -1,3 +1,10 @@
+<?php 
+session_start();
+  include_once '../php/connections.php';
+  include_once 'account_verification.php';
+
+?>
+
 <html>
  <head>
   <title>
@@ -16,10 +23,13 @@
     <div class="col-md-3">
      <div class="card">
       <div class="card-header text-center">
-       <img alt="Profile picture of barangay staff member" class="rounded-circle" height="100" src="istockphoto-1393750072-612x612.jpg" width="100"/>
-       <h4 class="mt-2">
-        Admin
+       <img alt="Profile picture of barangay staff member" class="rounded-circle" height="100" src="<?php echo "$Photo" ?>" width="100"/>
+        <h4 class="mt-2">
+        <?php echo "$Role" ?>
        </h4>
+       <h5>
+        <?php echo "$Name" ?>
+       </h5>
 
       </div>
       <nav class="card-body">
