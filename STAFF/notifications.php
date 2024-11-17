@@ -8,12 +8,12 @@ session_start();
 <html>
  <head>
   <title>
-   Barangay Staff Dashboard
+   Barangay Staff Notifications
   </title>
 <link crossorigin="anonymous" href="bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
   <link href="all.min.css" rel="stylesheet"/>
   <link href="dashboard.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="../assets/fontawesome-free-6.5.2-web/css/all.min.css">
+   <link rel="stylesheet" href="../assets/fontawesome-free-6.5.2-web/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
  </head>
  <body>
@@ -23,7 +23,7 @@ session_start();
      <div class="card">
       <div class="card-header text-center">
        <img alt="Profile picture of barangay staff member" class="rounded-circle" height="100"  src="<?php echo "$Photo" ?>" width="100"/>
-        <h4 class="mt-2">
+       <h4 class="mt-2">
         <?php echo "$Role" ?>
        </h4>
        <h5>
@@ -32,9 +32,9 @@ session_start();
 
 
       </div>
-      <nav class="card-body">
+       <nav class="card-body">
        <ul class="list-group list-group-flush">
-        <a href="brgystaff.php" class="list-group-item bg-dark text-white">
+        <a href="brgystaff.php" class="list-group-item bg-transparent">
          <i class="fas fa-home">
          </i>
          Dashboard
@@ -74,7 +74,7 @@ session_start();
          </i> 
          Reports
         </a>
-        <a href="notifications.php" class="list-group-item bg-transparent">
+        <a href="notifications.php" class="list-group-item bg-dark text-white">
          <i class="fas fa-cog">
          </i>
          
@@ -92,48 +92,37 @@ session_start();
         </a>
        </ul>
       </nav>
+      </div>
      </div>
-    </div>
     <div class="content">
     <div class="col-md-9">
      <div class="card mb-4">
       <div class="card-header">
-       <h5>
-        Announcements
-       </h5>
+        <h1>Notifications</h1>
       </div>
-     
-      <div class="card-body">
+    <div class="container">
         <table  class="table table-hover text-white">
-       <div class="mb-3">
-        <h6>
-         Announcement 1
-        </h6>
-        <p>
-         Community Clean-up Drive on Saturday
-        </p>
-       </div>
-       <div class="mb-3">
-        <h6>
-         Announcement 2
-        </h6>
-        <p>
-        New Waste Segregation Guidelines
-        </p>
-       </div>
-       <div class="mb-3">
-        <h6>
-         Announcement 3
-        </h6>
-        <p>
-         Community Clean-up Drive on Saturday
-        </p>
-       </div>
-      </div>
-     </div>
-    </div>
-    </div>
-   </div>
+                
+                <div class="card">
+                    <h3>Notification 1</h3>
+                    <p>Details: Waste collection schedule updated for Barangay 1.</p>
+                    <p>Date: 2024-11-13</p>
+                </div>
+                <div class="card">
+                    <h3>Notification 2</h3>
+                    <p>Details: New recycling program introduced.</p>
+                    <p>Date: 2024-11-12</p>
+                </div>
+                <div class="card">
+                    <h3>Notification 3</h3>
+                    <p>Details: Community clean-up event on 2024-11-11.</p>
+                    <p>Date: 2024-11-11</p>
+                </div>
+            </div>
+    </div> 
+</div>
+</div>
+</div>
 </table>
  </body>
 </html>

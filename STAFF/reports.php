@@ -1,3 +1,10 @@
+<?php 
+session_start();
+  include_once '../php/connections.php';
+  include_once 'account_verification.php';
+
+?>
+
 <html>
  <head>
   <title>
@@ -5,7 +12,8 @@
   </title>
 <link crossorigin="anonymous" href="bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
   <link href="all.min.css" rel="stylesheet"/>
-  <link href="reports.css" rel="stylesheet"/>
+   <link href="dashboard.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/fontawesome-free-6.5.2-web/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
  </head>
  <body>
@@ -14,72 +22,76 @@
     <div class="col-md-3">
      <div class="card">
       <div class="card-header text-center">
-       <img alt="Profile picture of barangay staff member" class="rounded-circle" height="100" src="istockphoto-1393750072-612x612.jpg" width="100"/>
+       <img alt="Profile picture of barangay staff member" class="rounded-circle" height="100"  src="<?php echo "$Photo" ?>" width="100"/>
        <h4 class="mt-2">
-        Barangay Staff
+        <?php echo "$Role" ?>
        </h4>
+       <h5>
+        <?php echo "$Name" ?>
+       </h5>
+
 
       </div>
-      <div class="card-body">
+     <nav class="card-body">
        <ul class="list-group list-group-flush">
-        <li class="list-group-item bg-transparent">
+        <a href="brgystaff.php" class="list-group-item bg-transparent">
          <i class="fas fa-home">
          </i>
          Dashboard
-        </li>
-        <li class="list-group-item bg-transparent">
+        </a>
+        <a href="" class="list-group-item bg-transparent">
          <i class="fas fa-bullhorn">
          </i>
          Residents Profile
-        </li>
-        <li class="list-group-item bg-transparent">
+        </a>
+        <a href="wastecollectsched.php" class="list-group-item bg-transparent">
          <i class="fas fa-comments">
          </i> 
          Waste Collection Schedule
-        </li>
-        <li class="list-group-item bg-transparent">
+        </a>
+        <a href="monitoring.php" class="list-group-item bg-transparent">
          <i class="fas fa-cog">
          </i>
          Waste Segregation Monitoring
-        </li>
-        <li class="list-group-item bg-transparent">
+        </a>
+        <a class="list-group-item bg-transparent">
          <i class="fas fa-cog">
          </i>
          Announcements
-        </li>
-        <li class="list-group-item bg-transparent">
+        </a>
+        <a href="complaints.php" class="list-group-item bg-transparent">
          <i class="fas fa-calendar-alt">
          </i>
         Complaints
-        </li>
-        <li class="list-group-item bg-transparent">
+        </a>
+        <a href="feedback.php" class="list-group-item bg-transparent">
          <i class="fas fa-complaints-alt">
         </i>
         Feedback
-        </li>
-        <li class="list-group-item bg-transparent">
+        </a>
+        <a href="reports.php" class="list-group-item bg-dark text-white">
          <i class="fas fa-comments">
          </i> 
          Reports
-        </li>
-        <li class="list-group-item bg-transparent">
+        </a>
+        <a href="notifications.php" class="list-group-item bg-transparent">
          <i class="fas fa-cog">
          </i>
          
          Notifications
-        </li>
-        <li class="list-group-item bg-transparent">
+        </a>
+        <a class="list-group-item bg-transparent">
          <i class="fas fa-bell">
         </i>
          Settings
-        </li>
-        <li class="list-group-item bg-transparent">
+        </a>
+        <a href="../php/logout.php" class="list-group-item bg-transparent">
          <i class="fas fa-sign-out-alt">
          </i>
          Logout
-        </li>
+        </a>
        </ul>
-      </div>
+      </nav>
      </div>
     </div>
     <div class="content">
