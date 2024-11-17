@@ -1,0 +1,75 @@
+body {
+    font-family: 'Roboto', sans-serif;
+background: linear-gradient(to right, #C1E899, #94DEA5);
+color: #fff;
+}
+
+
+.card {
+    background-color: rgba(255, 255, 255, 0.334);
+    border: 10px black;
+    }
+    .card-header {
+    background-color: rgba(255, 255, 255, 0.485);
+    border: 10px black;
+    
+    }
+    .card-body {
+    background-color: rgba(255, 255, 255, 0);
+    border: 10px black;
+    
+    }
+
+.content {
+    flex: 1;
+padding: 20px;
+background-color: #E6F0DC; 
+border-radius: 10px;
+border: 10px black;
+margin: 20px;
+}
+.content h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+.content .card {
+    background-color: #ecf0f1;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.content .card h2 {
+    margin-top: 0;
+}
+.content .card p {
+    margin: 10px 0;
+}
+.notifications {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.notification {
+    background-color: #ecf0f1;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+.notification .icon {
+    margin-right: 15px;
+    font-size: 1.5em;
+    color: #2c3e50;
+}
+.notification .details {
+    flex-grow: 1;
+}
+.notification .details .title {
+    font-weight: bold;
+}
+.notification .details .time {
+    font-size: 0.9em;
+    color: #7f8c8d;
+}
