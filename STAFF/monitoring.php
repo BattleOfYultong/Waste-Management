@@ -38,7 +38,7 @@ session_start();
          </i>
          Dashboard
         </a>
-        <a href="" class="list-group-item bg-transparent">
+        <a href="residents-profile.php" class="list-group-item bg-transparent">
          <i class="fas fa-bullhorn">
          </i>
          Residents Profile

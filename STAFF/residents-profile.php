@@ -12,8 +12,8 @@ session_start();
   </title>
 <link crossorigin="anonymous" href="bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
   <link href="all.min.css" rel="stylesheet"/>
-   <link href="dashboard.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="../assets/fontawesome-free-6.5.2-web/css/all.min.css">
+  <link href="dashboard.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="../assets/fontawesome-free-6.5.2-web/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
  </head>
  <body>
@@ -23,7 +23,7 @@ session_start();
      <div class="card">
       <div class="card-header text-center">
        <img alt="Profile picture of barangay staff member" class="rounded-circle" height="100"  src="<?php echo "$Photo" ?>" width="100"/>
-       <h4 class="mt-2">
+        <h4 class="mt-2">
         <?php echo "$Role" ?>
        </h4>
        <h5>
@@ -32,14 +32,14 @@ session_start();
 
 
       </div>
-     <nav class="card-body">
+      <nav class="card-body">
        <ul class="list-group list-group-flush">
-        <a href="brgystaff.php" class="list-group-item bg-transparent">
+        <a href="brgystaff.php" class="list-group-item bg-transparent ">
          <i class="fas fa-home">
          </i>
          Dashboard
         </a>
-        <a href="residents-profile.php" class="list-group-item bg-transparent">
+        <a href="residents-profile.php" class="list-group-item bg-dark text-white">
          <i class="fas fa-bullhorn">
          </i>
          Residents Profile
@@ -69,7 +69,7 @@ session_start();
         </i>
         Feedback
         </a>
-        <a href="reports.php" class="list-group-item bg-dark text-white">
+        <a href="reports.php" class="list-group-item bg-transparent">
          <i class="fas fa-comments">
          </i> 
          Reports
@@ -96,52 +96,40 @@ session_start();
     </div>
     <div class="content">
         <div class="col-md-9">
-         <div class="card mb-4">
-    <div class="content">
-    <div class="container">
-        <div class="header">
-            <h2>Segregation Guidelines</h2>
-        </div>
-        <div class="guidelines">
-            <h2>Guidelines</h2>
-            <ul>
-                <li>Separate wet and dry waste at the source.</li>
-                <li>Use different bins for different types of waste.</li>
-                <li>Do not mix hazardous waste with regular waste.</li>
-                <li>Compost organic waste whenever possible.</li>
-                <li>Recycle materials like paper, plastic, and glass.</li>
-                <li>Dispose of electronic waste at designated centers.</li>
-                <li>Follow local regulations for waste disposal.</li>
-                <li>Educate others about the importance of waste segregation.</li>
-                <li>Reduce the use of single-use plastics.</li>
-                <li>Use reusable bags and containers.</li>
-                <li>Properly label waste bins.</li>
-                <li>Ensure waste bins are covered to prevent pests.</li>
-                <li>Regularly clean waste bins to avoid odors.</li>
-                <li>Report any non-compliance to local authorities.</li>
-                <li>Participate in community clean-up drives.</li>
-            </ul>
-        </div>
-        <div class="report-form">
-            <h2>Report Non-Compliance</h2>
-            <form>
-                <label for="location">Location</label>
-                <input type="text" id="location" name="location" placeholder="Enter the location of non-compliance">
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h1>Residents Profile</h1>
+                    </div>
+                    <div class="container">
+                        <div class="profile-dashboard">
+                            <div class="profile-card">
+                                <img class="rounded-circle" height="100" src="pngtree-user-profile-avatar-png-image_13369991.png" width="100"/>
+                                <div class="info">
+                                    <h3>John</h3>
+                                    <p>Address: 123 Main St, Barangay 1</p>
+                                    <p>Contact: (123) 456-7890</p>
+                                </div>
+                                <div class="actions">
+                                    <button type="button" class="btn btn-primary">Edit</button>
+                                    <button type="button" class="btn btn-danger">Delete</button>
 
-                <label for="description">Description</label>
-                <textarea id="description" name="description" rows="4" placeholder="Describe the issue"></textarea>
+                                </div>
+                            </div>
 
-                <label for="photo">Upload Photo</label>
-                <input type="file" id="photo" name="photo">
 
-                <button type="submit">Submit Report</button>
-            </form>
-        </div>
+                        </div>
+                    </div>
+                </div>
     </div>
-</div>
-         </div>
-        </div>
-    </div>
+
+
+
+
+
+
+
+
+   </div>
 </table>
  </body>
 </html>
