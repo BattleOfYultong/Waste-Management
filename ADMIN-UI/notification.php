@@ -59,11 +59,11 @@ session_start();
          </i>
          Collection Status Management
         </a>
-        <a href="notification.php" class="list-group-item bg-transparent">
+        <a href="notification.php" class="list-group-item bg-dark text-white">
          
        Notifications
         </a>
-        <a href="reports.php" class="list-group-item bg-dark text-white">
+        <a href="reports.php" class="list-group-item bg-transparent">
          <i class="fas fa-bell-alt">
         </i>
          Reports

@@ -63,7 +63,7 @@ session_start();
          
        Notifications
         </a>
-        <a href="reports.php" class="list-group-item bg-transparent">
+        <a href="reports.php" class="list-group-item bg-dark text-white">
          <i class="fas fa-bell-alt">
         </i>
          Reports

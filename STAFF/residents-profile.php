@@ -32,9 +32,9 @@ session_start();
 
 
       </div>
-      <nav class="card-body">
+       <nav class="card-body">
        <ul class="list-group list-group-flush">
-        <a href="brgystaff.php" class="list-group-item bg-transparent ">
+        <a href="brgystaff.php" class="list-group-item bg-transparent">
          <i class="fas fa-home">
          </i>
          Dashboard
@@ -55,8 +55,13 @@ session_start();
          Waste Segregation Monitoring
         </a>
         <a class="list-group-item bg-transparent">
-         <i class="fas fa-cog">
-         </i>
+        
+
+           <a href="waste-guidelines.php" class="list-group-item bg-transparent">
+         <i class="fa-solid fa-book"></i>
+         Waste Segregation Guidelines
+        </a>
+
          Announcements
         </a>
         <a href="complaints.php" class="list-group-item bg-transparent">

@@ -54,9 +54,13 @@ session_start();
          </i>
          Waste Segregation Monitoring
         </a>
-        <a class="list-group-item bg-transparent">
-         <i class="fas fa-cog">
-         </i>
+       
+
+           <a href="waste-guidelines.php" class="list-group-item bg-transparent">
+         <i class="fa-solid fa-book"></i>
+         Waste Segregation Guidelines
+        </a>
+
          Announcements
         </a>
         <a href="complaints.php" class="list-group-item bg-transparent">
