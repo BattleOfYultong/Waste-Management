@@ -101,7 +101,58 @@ session_start();
          <div class="card mb-4">
     <div class="content">
     <div class="container">
-      
+      <div class="report-staff-boxes">
+         <h2>Report Non-Compliance</h2>
+
+            <div  class="complaint"> 
+            <h5>Report ID: 10291</h5> 
+            <p>Details: Di maayos ang pagtapon ng basura </p> 
+            <p>Address: bl18 l19 quezon City </p>
+            <p>Submitted by: User </p> 
+            <div class="buttons"> 
+                <button>Resolve</button> 
+                <button class="delete">Delete</button> 
+            </div> 
+            </div>
+
+            <div  class="complaint"> 
+            <h5>Report ID: 10291</h5> 
+            <p>Details: Di maayos ang pagtapon ng basura </p> 
+            <p>Address: bl18 l19 quezon City </p>
+            <p>Submitted by: User </p> 
+            <div class="buttons"> 
+                <button>Resolve</button> 
+                <button class="delete">Delete</button> 
+            </div> 
+            </div>
+
+
+            <div  class="complaint"> 
+            <h5>Report ID: 10291</h5> 
+            <p>Details: Di maayos ang pagtapon ng basura </p> 
+            <p>Address: bl18 l19 quezon City </p>
+            <p>Submitted by: User </p> 
+            <div class="buttons"> 
+                <button>Resolve</button> 
+                <button class="delete">Delete</button> 
+            </div> 
+            </div>
+
+
+            <div  class="complaint"> 
+            <h5>Report ID: 10291</h5> 
+            <p>Details: Di maayos ang pagtapon ng basura </p> 
+            <p>Address: bl18 l19 quezon City </p>
+            <p>Submitted by: User </p> 
+            <div class="buttons"> 
+                <button>Resolve</button> 
+                <button class="delete">Delete</button> 
+            </div> 
+            </div>
+            
+
+            
+      </div>
        
     </div>
 </div>

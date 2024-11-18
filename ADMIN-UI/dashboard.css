@@ -2,6 +2,9 @@ body {
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(to right, #C1E899, #94DEA5);
     color: #fff;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
 .card {
