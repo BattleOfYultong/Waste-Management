@@ -32,7 +32,7 @@ session_start();
 
 
       </div>
-       <nav class="card-body">
+        <nav class="card-body">
        <ul class="list-group list-group-flush">
 
         <a href="residents.php" class="list-group-item bg-transparent">
@@ -47,17 +47,19 @@ session_start();
          Waste Collection Schedule
         </a>
 
+         <a href="waste-guidelines.php" class="list-group-item bg-transparent">
+         <i class="fa-solid fa-book"></i>
+         Waste Segregation Guidelines
+        </a>
+
+
          <a href="reports.php" class="list-group-item bg-transparent">
          <i class="fas fa-comments">
          </i> 
          Reports
         </a>
 
-         <a href="feedback.php" class="list-group-item bg-transparent">
-         <i class="fas fa-complaints-alt">
-        </i>
-        Feedback
-        </a>
+       
 
          <a href="notifications.php" class="list-group-item bg-dark text-white">
          <i class="fas fa-cog">

@@ -8,12 +8,12 @@ session_start();
 <html>
  <head>
   <title>
-   Barangay Staff Complaints
+   Barangay Staff Dashboard
   </title>
 <link crossorigin="anonymous" href="bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" rel="stylesheet"/>
   <link href="all.min.css" rel="stylesheet"/>
-  <link href="dashboard.css" rel="stylesheet"/>
-   <link rel="stylesheet" href="../assets/fontawesome-free-6.5.2-web/css/all.min.css">
+   <link href="dashboard.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../assets/fontawesome-free-6.5.2-web/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
  </head>
  <body>
@@ -47,17 +47,19 @@ session_start();
          Waste Collection Schedule
         </a>
 
+         <a href="waste-guidelines.php" class="list-group-item bg-dark text-white">
+         <i class="fa-solid fa-book"></i>
+         Waste Segregation Guidelines
+        </a>
+
+
          <a href="reports.php" class="list-group-item bg-transparent">
          <i class="fas fa-comments">
          </i> 
          Reports
         </a>
 
-         <a href="feedback.php" class="list-group-item bg-dark text-white">
-         <i class="fas fa-complaints-alt">
-        </i>
-        Feedback
-        </a>
+       
 
          <a href="notifications.php" class="list-group-item bg-transparent">
          <i class="fas fa-cog">
@@ -82,45 +84,42 @@ session_start();
       </nav>
 
 
-      </div>
      </div>
+    </div>
     <div class="content">
-    <div class="col-md-9">
-     <div class="card mb-4">
-      <div class="card-header">
-        <h1>Feedback</h1>
-      </div>
+        <div class="col-md-9">
+         <div class="card mb-4">
+    <div class="content">
     <div class="container">
-        <table  class="table table-hover text-white">
-            <div class="feedback"> 
-            <h5>Feedback 1</h5> 
-            <p>Details: Great job on timely waste collection!</p> 
-            <p>Submitted by: Emily</p> 
-            <div class="buttons"> 
-                <button>Reply</button> 
-                <button class="delete">Delete</button> 
-            </div> 
-        </div> 
-        <div class="feedback"> 
-            <h5>Feedback 2</h5> 
-            <p>Details: Need more recycling bins in the area.</p> 
-            <p>Submitted by:Robert</p> <div class="buttons"> 
-                <button>Reply</button> 
-                <button class="delete">Delete</button> 
-            </div> 
-        </div> 
-        <div class="feedback"> 
-            <h5>Feedback 3</h5> 
-            <p>Details: Appreciate the new waste management system.</p> 
-            <p>Submitted by: Sarah</p> 
-            <div class="buttons"> 
-                <button>Reply</button> 
-                <button class="delete">Delete</button> 
-        </div> 
-    </div> 
+       
+         <div style="color: black; font-weight:bold"  class="header">
+            <h2>Segregation Guidelines</h2>
+        </div>
+        <div class="guidelines">
+            <h2>Guidelines</h2>
+            <ul>
+                <li>Separate wet and dry waste at the source.</li>
+                <li>Use different bins for different types of waste.</li>
+                <li>Do not mix hazardous waste with regular waste.</li>
+                <li>Compost organic waste whenever possible.</li>
+                <li>Recycle materials like paper, plastic, and glass.</li>
+                <li>Dispose of electronic waste at designated centers.</li>
+                <li>Follow local regulations for waste disposal.</li>
+                <li>Educate others about the importance of waste segregation.</li>
+                <li>Reduce the use of single-use plastics.</li>
+                <li>Use reusable bags and containers.</li>
+                <li>Properly label waste bins.</li>
+                <li>Ensure waste bins are covered to prevent pests.</li>
+                <li>Regularly clean waste bins to avoid odors.</li>
+                <li>Report any non-compliance to local authorities.</li>
+                <li>Participate in community clean-up drives.</li>
+            </ul>
+        </div>
+    </div>
 </div>
-</div>
-</div>
+         </div>
+        </div>
+    </div>
 </table>
  </body>
 </html>

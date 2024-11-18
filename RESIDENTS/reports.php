@@ -47,17 +47,19 @@ session_start();
          Waste Collection Schedule
         </a>
 
+         <a href="waste-guidelines.php" class="list-group-item bg-transparent">
+         <i class="fa-solid fa-book"></i>
+         Waste Segregation Guidelines
+        </a>
+
+
          <a href="reports.php" class="list-group-item bg-dark text-white">
          <i class="fas fa-comments">
          </i> 
          Reports
         </a>
 
-         <a href="feedback.php" class="list-group-item bg-transparent">
-         <i class="fas fa-complaints-alt">
-        </i>
-        Feedback
-        </a>
+       
 
          <a href="notifications.php" class="list-group-item bg-transparent">
          <i class="fas fa-cog">
@@ -89,29 +91,7 @@ session_start();
          <div class="card mb-4">
     <div class="content">
     <div class="container">
-        <div class="header">
-            <h2>Segregation Guidelines</h2>
-        </div>
-        <div class="guidelines">
-            <h2>Guidelines</h2>
-            <ul>
-                <li>Separate wet and dry waste at the source.</li>
-                <li>Use different bins for different types of waste.</li>
-                <li>Do not mix hazardous waste with regular waste.</li>
-                <li>Compost organic waste whenever possible.</li>
-                <li>Recycle materials like paper, plastic, and glass.</li>
-                <li>Dispose of electronic waste at designated centers.</li>
-                <li>Follow local regulations for waste disposal.</li>
-                <li>Educate others about the importance of waste segregation.</li>
-                <li>Reduce the use of single-use plastics.</li>
-                <li>Use reusable bags and containers.</li>
-                <li>Properly label waste bins.</li>
-                <li>Ensure waste bins are covered to prevent pests.</li>
-                <li>Regularly clean waste bins to avoid odors.</li>
-                <li>Report any non-compliance to local authorities.</li>
-                <li>Participate in community clean-up drives.</li>
-            </ul>
-        </div>
+       
         <div class="report-form">
             <h2>Report Non-Compliance</h2>
             <form>
