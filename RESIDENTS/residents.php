@@ -35,14 +35,37 @@ session_start();
       <nav class="card-body">
        <ul class="list-group list-group-flush">
 
-        <a href="complaints.php" class="list-group-item bg-dark text-white">
+        <a href="residents.php" class="list-group-item bg-dark text-white">
          <i class="fas fa-calendar-alt">
          </i>
         Complaints
         </a>
-      
-       
-       
+
+         <a href="wastecollectsched.php" class="list-group-item bg-transparent">
+         <i class="fas fa-comments">
+         </i> 
+         Waste Collection Schedule
+        </a>
+
+         <a href="reports.php" class="list-group-item bg-transparent">
+         <i class="fas fa-comments">
+         </i> 
+         Reports
+        </a>
+
+         <a href="feedback.php" class="list-group-item bg-transparent">
+         <i class="fas fa-complaints-alt">
+        </i>
+        Feedback
+        </a>
+
+         <a href="notifications.php" class="list-group-item bg-transparent">
+         <i class="fas fa-cog">
+         </i>
+         
+         Notifications
+        </a>
+
         
         
         <a class="list-group-item bg-transparent">
