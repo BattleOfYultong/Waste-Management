@@ -106,36 +106,220 @@ session_start();
       </div>
      
       <div class="card-body">
-        <table  class="table table-hover text-white">
-       <div class="mb-3">
-        <h6>
-         Announcement 1
-        </h6>
-        <p>
-         Community Clean-up Drive on Saturday
-        </p>
-       </div>
-       <div class="mb-3">
-        <h6>
-         Announcement 2
-        </h6>
-        <p>
-        New Waste Segregation Guidelines
-        </p>
-       </div>
-       <div class="mb-3">
-        <h6>
-         Announcement 3
-        </h6>
-        <p>
-         Community Clean-up Drive on Saturday
-        </p>
-       </div>
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-success "
+          data-bs-toggle="modal"
+          data-bs-target="#announcement"
+        >
+          Create Announcement
+        </button>
+        
+        
+        
+      
+        
+        <div class="announcement-card-wrapper">
+          <?php include_once '../php/staff/functions.php';
+            $fetchAnnouncement = fetchAnnouncement();
+            
+          ?>
+          <!--  -->
+            <?php foreach ($fetchAnnouncement AS $Announcement): ?>
+          <div class="annoucement-card-box">
+          
+             <h1><?php echo htmlspecialchars($Announcement['Announcement']) ?></h1>
+             <p>Details: <?php echo htmlspecialchars($Announcement['Description']) ?></p>
+             <div class="annoucement-card-actions">
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-primary "
+                data-bs-toggle="modal"
+                data-bs-target="#modalId"
+                data-id = "<?php echo htmlspecialchars($Announcement['announcementID']) ?>"
+                data-announcement = "<?php echo htmlspecialchars($Announcement['Announcement']) ?>"
+                data-description = "<?php echo htmlspecialchars($Announcement['Description']) ?>"
+              >
+                Edit
+              </button>
+
+              <button
+                type="button"
+                class="btn btn-danger "
+                onclick="deleteAnnouncement(<?php echo htmlspecialchars($Announcement['announcementID']) ?>)"
+              >
+                Delete
+              </button>
+              
+              
+            
+              </div>
+
+             
+           </div>
+           <?php endforeach ?>
+
+            <!--  -->
+
+           
+         
       </div>
-     </div>
-    </div>
-    </div>
-   </div>
-</table>
+
+        <!-- create modal -->
+
+              <!-- Modal -->
+        <form
+          class="modal fade"
+          id="announcement"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="modalTitleId"
+          aria-hidden="true"
+          action="../php/staff/executions.php"
+          method="POST"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalTitleId">
+                  Create Announcement
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">
+                    <!--About -->
+                   <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-bullhorn"></i></span>
+                        <input type="text" class="form-control" placeholder="Annoucement" name="Announcement" required>
+                  </div>
+
+                   <!-- Description -->
+                  <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
+                     <textarea class="form-control" placeholder="Description" name="Description" rows="3" required></textarea>
+                    </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="submit" name="createAnnouncement" class="btn btn-primary">Create</button>
+              </div>
+            </div>
+          </div>
+        </form>
+              
+              
+
+        <!--View  Modal -->
+              <form
+                class="modal fade"
+                id="modalId"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="modalTitleId"
+                aria-hidden="true"
+                action="../php/staff/executions.php"
+                method="POST"
+              >
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modalTitleId">
+                        View Annoucement
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="container-fluid">
+
+                        <div hidden class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-bullhorn"></i></span>
+                        <input id="announcementID" type="text" class="form-control" placeholder="Annoucement" name="AnnouncementID" required>
+                       </div>
+                        <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-bullhorn"></i></span>
+                        <input type="text" id="Announcement" class="form-control" placeholder="Annoucement" name="Announcement" required>
+                  </div>
+
+                   <!-- Description -->
+                  <div class="input-group mb-3">
+                    <span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
+                     <textarea class="form-control" id="Description" placeholder="Description" name="Description" rows="3" required></textarea>
+                    </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button type="submit" name="updateAnnouncement" class="btn btn-primary">Save</button>
+                    </div>
+                  </div>
+                </div>
+              </fo>
+
+            
+              
+
+      <script src="../assets/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+      <script src="../assets/Jquery/jquery.js"></script>
+
+
+      <script>
+        function deleteAnnouncement(announcementID){
+          console.log(announcementID);
+          
+         window.location.href = '../php/staff/executions.php?deleteAnnouncement=' + announcementID;
+
+
+        }
+      </script>
+      
+      <script>
+   function populateUserModal(button) {
+    // Retrieve data from button's attributes
+    const name = $(button).data('name');
+    const description = $(button).data('description')
+     const announcementID = $(button).data('id')
+      const announcement = $(button).data('announcement')
+    // Populate modal fields
+    $('#announcementID').val(announcementID);
+    $('#Announcement').val(announcement);
+    $('#Description').val(description);
+
+}
+
+// Event listener to open modal and populate data
+$(document).on('click', '[data-bs-target="#modalId"]', function () {
+    populateUserModal(this);
+});
+</script>
+   
+
+      </script>
+
  </body>
 </html>

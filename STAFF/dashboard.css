@@ -10,6 +10,7 @@ body {
 .card {
     background-color: rgba(255, 255, 255, 0.334);
     border-radius: 5px;
+    
 }
 
 .card-header {
@@ -18,6 +19,7 @@ body {
 
 .card-body {
     background-color: rgba(255, 255, 255, 0);
+    
 }
 
 .content {
@@ -26,6 +28,7 @@ body {
     background-color: #E6F0DC;
     border-radius: 10px;
     margin: 20px 0;
+    
 }
 
 .content h3, 
@@ -131,3 +134,21 @@ table {
     margin-bottom: 20px;
     color: black;
 }
+.annoucement-card-box{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    width: 90%;
+    padding: 10px;
+    min-height: 100px;
+}
+.announcement-card-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+    margin-top: 20px;
+}
+.annoucement-card-box h1{
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
