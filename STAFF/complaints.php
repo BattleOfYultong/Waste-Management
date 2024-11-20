@@ -15,6 +15,7 @@ session_start();
   <link href="dashboard.css" rel="stylesheet"/>
    <link rel="stylesheet" href="../assets/fontawesome-free-6.5.2-web/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../assets/bootstrap-5.3.3-dist/css/bootstrap.min.css">
  </head>
  <body>
   <div class="container mt-5">
@@ -128,9 +129,9 @@ session_start();
             <p>Details: <?php echo htmlspecialchars($complaints['Description']) ?></p> 
             <p>Address: <?php echo htmlspecialchars($complaints['Address']) ?></p>
             <p>Submitted by: <?php echo htmlspecialchars($complaints['Name']) ?></p> 
-            <div class="buttons"> 
-                <button>Resolve</button> 
-                <button class="delete">Delete</button> 
+            <div class="button"> 
+                <button class="btn btn-primary">Resolve</button> 
+                <button class="btn btn-danger">Delete</button> 
             </div> 
         </div> 
 
