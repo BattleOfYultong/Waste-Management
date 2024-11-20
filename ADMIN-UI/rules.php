@@ -63,12 +63,12 @@ session_start();
          Collection Status Management
         </a>
         <a href="notification.php" class="list-group-item bg-transparent">
-         
+         <i class="fa-solid fa-bell"></i>
        Notifications
         </a>
         <a href="reports.php" class="list-group-item bg-transparent">
-         <i class="fas fa-bell-alt">
-        </i>
+        <i class="fa-solid fa-flag"></i>
+        
          Reports
         </a>
         <a href="rules.php" class="list-group-item bg-dark text-white">
@@ -77,6 +77,7 @@ session_start();
          Rules & Policies
         </a>
         <a href="---" class="list-group-item bg-transparent">
+            <i class="fa-solid fa-gears"></i>
          Settings
         </a>
         <a href= "../php/logout.php" class="list-group-item bg-transparent">

@@ -72,8 +72,7 @@ session_start();
         
         
         <a class="list-group-item bg-transparent">
-         <i class="fas fa-bell">
-        </i>
+        <i class="fa-solid fa-gears"></i>
          Settings
         </a>
         <a href="../php/logout.php" class="list-group-item bg-transparent">
