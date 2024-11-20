@@ -41,6 +41,13 @@ session_start();
         Complaints
         </a>
 
+         <a href="Announcements.php" class="list-group-item bg-transparent">
+         <i class="fa-solid fa-bullhorn"></i>
+         </i>
+         Announcements
+        </a>
+        
+
          <a href="wastecollectsched.php" class="list-group-item bg-transparent">
          <i class="fas fa-comments">
          </i> 
