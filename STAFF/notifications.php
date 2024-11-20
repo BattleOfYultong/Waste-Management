@@ -60,16 +60,14 @@ session_start();
          <i class="fa-solid fa-book"></i>
          Waste Segregation Guidelines
         </a>
-         Announcements
-        </a>
+       
         <a href="complaints.php" class="list-group-item bg-transparent">
-         <i class="fas fa-calendar-alt">
+         <i class="fas fa-calendar">
          </i>
         Complaints
         </a>
         <a href="feedback.php" class="list-group-item bg-transparent">
-         <i class="fas fa-complaints-alt">
-        </i>
+        <i class="fa-solid fa-comment"></i>
         Feedback
         </a>
         <a href="reports.php" class="list-group-item bg-transparent">

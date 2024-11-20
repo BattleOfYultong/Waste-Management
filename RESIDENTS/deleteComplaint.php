@@ -9,7 +9,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     $result = mysqli_query($connections, $sql);
    
      if($result){
-            echo "<script>window.location.href='complaints.php';</script>";
+            echo "<script>window.location.href='residents.php';</script>";
         }
         else{
             echo "Error:" .$connections->error;
