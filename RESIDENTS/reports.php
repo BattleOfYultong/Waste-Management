@@ -99,17 +99,23 @@ session_start();
        
         <div class="report-form">
             <h2>Report Non-Compliance</h2>
-            <form>
+            <form action="../php/resident//executions.php" method="POST" enctype="multipart/form-data">
+                  <div style=" padding: 10px; display: flex; justify-content: center; align-items: center;" class="compliance-img">
+                      <img id="photoPreview" style="width: 250px; height: 250px; border: 2px solid black;" src="../uploads/sample photo.jpg" alt="">
+                  </div>
+
                 <label for="location">Location</label>
-                <input type="text" id="location" name="location" placeholder="Enter the location of non-compliance">
-
+                <input required name ="Location" type="text" id="location" name="location" placeholder="Enter the location of non-compliance">
+                <input hidden name ="accountID" value="<?php echo "$accountID" ?>" type="text" id="location" name="location" placeholder="Enter the location of non-compliance">
                 <label for="description">Description</label>
-                <textarea id="description" name="description" rows="4" placeholder="Describe the issue"></textarea>
+                <textarea required style="resize: none;" id="description" name="Description" rows="4" placeholder="Describe the issue"></textarea>
 
-                <label for="photo">Upload Photo</label>
-                <input type="file" id="photo" name="photo">
+                <div class="mb-3">
+                  <label for="formFile" class="form-label">Upload File</label>
+                  <input required name="photo" class="form-control" type="file" id="formFile">
+                </div>
 
-                <button type="submit">Submit Report</button>
+                <button type="submit" name="reportCompliance">Submit Report</button>
             </form>
         </div>
     </div>
@@ -118,5 +124,31 @@ session_start();
         </div>
     </div>
 </table>
+
+ <script>
+        // Get DOM elements
+        const formFile = document.getElementById('formFile');
+        const photoPreview = document.getElementById('photoPreview');
+
+        // Add event listener for file input
+        formFile.addEventListener('change', function () {
+            const file = this.files[0]; // Get the selected file
+            if (file) {
+                const reader = new FileReader();
+
+                // Load the image file into the preview element
+                reader.onload = function (e) {
+                    photoPreview.src = e.target.result;
+                };
+
+                reader.readAsDataURL(file); // Convert file to Data URL
+            } else {
+                // Reset to default image if no file is selected
+                photoPreview.src = 'uploads/sample photo.jpg';
+            }
+        });
+    </script>
  </body>
+
+
 </html>
