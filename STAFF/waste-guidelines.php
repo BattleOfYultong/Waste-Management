@@ -105,24 +105,31 @@ session_start();
          <div style="color: black; font-weight:bold"  class="header">
             <h2>Segregation Guidelines</h2>
         </div>
+
         <div class="guidelines">
-            <h2>Guidelines</h2>
+            <!-- Button trigger modal -->
+            <button
+              type="button"
+              class="btn btn-success "
+              data-bs-toggle="modal"
+              data-bs-target="#modalId"
+            >
+              Create Guideline
+            </button>
+            
+            
+            <?php include_once '../php/staff/functions.php';
+              $fetchGuidelines = fetchGuidelines();
+             ?>
             <ul>
-                <li>Separate wet and dry waste at the source.</li>
-                <li>Use different bins for different types of waste.</li>
-                <li>Do not mix hazardous waste with regular waste.</li>
-                <li>Compost organic waste whenever possible.</li>
-                <li>Recycle materials like paper, plastic, and glass.</li>
-                <li>Dispose of electronic waste at designated centers.</li>
-                <li>Follow local regulations for waste disposal.</li>
-                <li>Educate others about the importance of waste segregation.</li>
-                <li>Reduce the use of single-use plastics.</li>
-                <li>Use reusable bags and containers.</li>
-                <li>Properly label waste bins.</li>
-                <li>Ensure waste bins are covered to prevent pests.</li>
-                <li>Regularly clean waste bins to avoid odors.</li>
-                <li>Report any non-compliance to local authorities.</li>
-                <li>Participate in community clean-up drives.</li>
+              <?php foreach ($fetchGuidelines AS $Guidelines): ?>
+              <div style="display: flex; align-items: center; justify-content: space-between" class="guidelines-container">
+                <div style="padding: 10px; margin-top: 10px; margin-bottom: 10px; width: 100%; font-weight: bold" ><?php echo htmlspecialchars($Guidelines['Description']) ?></div>
+                <button onclick="deleteGuideline(<?php echo htmlspecialchars($Guidelines['guidelinesID']) ?>)" class="btn btn-danger">
+                  <i class="fa-solid fa-trash"></i>
+                </button>
+                </div>
+               <?php endforeach ?> 
             </ul>
         </div>
     </div>
@@ -131,5 +138,65 @@ session_start();
         </div>
     </div>
 </table>
+
+
+<!-- Modal -->
+            <form
+              class="modal fade"
+              id="modalId"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="modalTitleId"
+              aria-hidden="true"
+              action="../php/staff/executions.php"
+              method="POST"
+            >
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitleId">
+                      Create Guideline
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="input-group mb-3">
+                          <span class="input-group-text"><i class="fas fa-pencil-alt"></i></span>
+                           <textarea class="form-control" placeholder="Description" name="Guidelines" rows="3" required></textarea>
+                       </div>
+
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button type="submit" name="createGuidelines" class="btn btn-primary">Create</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+            
+
+          <script src="../assets/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+
+
+          <script>
+            function deleteGuideline(guidelineID){
+              console.log(guidelineID);
+
+              window.location.href='../php/staff/executions.php?deleteGuideline=' + guidelineID;
+            }
+          </script>
  </body>
 </html>

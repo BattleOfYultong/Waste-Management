@@ -106,7 +106,7 @@ session_start();
     <div class="container">
 
      <?php
-          $sqlFetchComplaint_user = "SELECT c.complaintID, c.accountID, c.Description, c.Address, a.Photo,
+          $sqlFetchComplaint_user = "SELECT c.complaintID, c.Status, c.accountID, c.Description, c.Address, a.Photo,
           a.accountID, a.Name FROM complaint_tbl c INNER JOIN account_tbl a ON c.accountID = a.accountID 
           ";
           $sqlFetchComplaint_user_result = mysqli_query($connections, $sqlFetchComplaint_user);
@@ -128,14 +128,20 @@ session_start();
             <h5>Complaint ID: <?php echo htmlspecialchars($complaints['complaintID']) ?></h5> 
             <p>Details: <?php echo htmlspecialchars($complaints['Description']) ?></p> 
             <p>Address: <?php echo htmlspecialchars($complaints['Address']) ?></p>
+            <p>Status: <?php if($complaints['Status'] === null){
+              echo"In Progress";
+            }
+            else{
+              echo"Resolve";
+            } ?></p>
             <div style="display: flex; gap:10px; align-items: center; justify-content: flex-start; padding: 10px" class="user-photo-complaint">
                <p>Submitted by:</p> 
                <img style="width: 50px; height:50px; border-radius: 50%; border: 2px solid black;" src="<?php echo htmlspecialchars('../uploads/' .$complaints['Photo']) ?>" alt="">
                <span style="font-weight:bold"><?php echo htmlspecialchars($complaints['Name']) ?></span>
             </div>
             <div class="button mt-1"> 
-                <button class="btn btn-primary">Resolve</button> 
-                <button class="btn btn-danger">Delete</button> 
+                <button onclick = "resolveComplaint(<?php echo htmlspecialchars($complaints['complaintID']) ?>)" class="btn btn-primary">Resolve</button> 
+
             </div> 
         </div> 
 
@@ -146,4 +152,13 @@ session_start();
 </div>
 </table>
  </body>
+
+ <script>
+  function resolveComplaint(complaintID){
+    console.log(complaintID);
+
+     window.location.href='../php/staff/executions.php?resolveComplaint=' + complaintID;
+
+  }
+ </script>
 </html>

@@ -115,3 +115,64 @@ function fetchReports(){
     }
     return $fetchReports;
 }
+
+function fetchGuidelines(){
+    global $connections;
+
+    $sql = "SELECT *FROM guidelines_tbl";
+    $result = mysqli_query($connections, $sql);
+
+    $fetchGuidelines = [];
+
+    if($result){
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                  $fetchGuidelines[] = $row;
+            }
+        }
+    }
+    return $fetchGuidelines;
+}
+
+function createGuidelines($Guidelines){
+    global $connections;
+
+    $sql = "INSERT INTO guidelines_tbl (Description) VALUES ('$Guidelines')";
+    $result = mysqli_query($connections, $sql);
+
+     if($result){
+        echo "<script>window.location.href='../../staff/waste-guidelines.php';</script>";
+    }
+    else{
+        echo "Error:" .$connections->error;
+    }
+}
+
+function deleteguideLines($Guidelines){
+    global $connections;
+
+    $sql = "DELETE FROM guidelines_tbl WHERE guidelinesID = $Guidelines";
+    $result = mysqli_query($connections, $sql);
+
+     if($result){
+        echo "<script>window.location.href='../../staff/waste-guidelines.php';</script>";
+    }
+    else{
+        echo "Error:" .$connections->error;
+    }
+}
+
+function resolveComplaint($ComplaintID){
+    global $connections;
+
+    $sql = "UPDATE complaint_tbl SET Status = 'Resolve' WHERE complaintID = $ComplaintID";
+    $result = mysqli_query($connections, $sql);
+
+     if($result){
+        echo "<script>window.location.href='../../staff/complaints.php';</script>";
+    }
+    else{
+        echo "Error:" .$connections->error;
+    }
+
+}

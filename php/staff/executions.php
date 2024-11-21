@@ -27,6 +27,12 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         editSchedule($scheduleID, $Waste, $Time);
     }
+
+    if(isset($_POST['createGuidelines'])){
+        $Guidelines = $_POST['Guidelines'];
+
+        createGuidelines($Guidelines);
+    }
 }
 
 if($_SERVER['REQUEST_METHOD'] == 'GET'){
@@ -34,5 +40,17 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
         $AnnouncementID = $_GET['deleteAnnouncement'];
 
         deleteAnnouncement($AnnouncementID);
+    }
+
+    if(isset($_GET['deleteGuideline'])){
+        $Guidelines = $_GET['deleteGuideline'];
+
+        deleteguideLines($Guidelines);
+    }
+
+     if(isset($_GET['resolveComplaint'])){
+        $ComplaintID = $_GET['resolveComplaint'];
+
+        resolveComplaint($ComplaintID);
     }
 }
