@@ -101,23 +101,17 @@ session_start();
             <h2>Segregation Guidelines</h2>
         </div>
         <div class="guidelines">
-            <h2>Guidelines</h2>
+            
+            <?php include_once '../php/staff/functions.php';
+              $fetchGuidelines = fetchGuidelines();
+             ?>
             <ul>
-                <li>Separate wet and dry waste at the source.</li>
-                <li>Use different bins for different types of waste.</li>
-                <li>Do not mix hazardous waste with regular waste.</li>
-                <li>Compost organic waste whenever possible.</li>
-                <li>Recycle materials like paper, plastic, and glass.</li>
-                <li>Dispose of electronic waste at designated centers.</li>
-                <li>Follow local regulations for waste disposal.</li>
-                <li>Educate others about the importance of waste segregation.</li>
-                <li>Reduce the use of single-use plastics.</li>
-                <li>Use reusable bags and containers.</li>
-                <li>Properly label waste bins.</li>
-                <li>Ensure waste bins are covered to prevent pests.</li>
-                <li>Regularly clean waste bins to avoid odors.</li>
-                <li>Report any non-compliance to local authorities.</li>
-                <li>Participate in community clean-up drives.</li>
+              <?php foreach ($fetchGuidelines AS $Guidelines): ?>
+              <div style="display: flex; align-items: center; justify-content: space-between" class="guidelines-container">
+                <div style="padding: 10px; margin-top: 10px; margin-bottom: 10px; width: 100%; font-weight: bold" ><?php echo htmlspecialchars($Guidelines['Description']) ?></div>
+                
+                </div>
+               <?php endforeach ?> 
             </ul>
         </div>
     </div>
