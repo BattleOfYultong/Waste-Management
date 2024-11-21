@@ -100,100 +100,47 @@ session_start();
      </h5>
     </div>
     <div class="card-body">
-     <table  class="table table-hover text-white">
-      <thead>
-       <tr>
-        <th>
-         Day
-        </th>
-        <th>
-         Type of Waste
-        </th>
-        <th>
-         Time
-        </th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr>
-        <td>
-         Monday
-        </td>
-        <td>
-         Biodegradable
-        </td>
-        <td>
-         6:00 AM - 8:00 AM
-        </td>
-       </tr>
-       <tr>
-        <td>
-         Tuesday
-        </td>
-        <td>
-         Non-Biodegradable
-        </td>
-        <td>
-         6:00 AM - 8:00 AM
-        </td>
-       </tr>
-       <tr>
-        <td>
-         Wednesday
-        </td>
-        <td>
-         Biodegradable
-        </td>
-        <td>
-         6:00 AM - 8:00 AM
-        </td>
-       </tr>
-       <tr>
-        <td>
-         Thursday
-        </td>
-        <td>
-         Non-Biodegradable
-        </td>
-        <td>
-         6:00 AM - 8:00 AM
-        </td>
-       </tr>
-       <tr>
-        <td>
-         Friday
-        </td>
-        <td>
-         Biodegradable
-        </td>
-        <td>
-         6:00 AM - 8:00 AM
-        </td>
-       </tr>
-       <tr>
-        <td>
-         Saturday
-        </td>
-        <td>
-         Non-Biodegradable
-        </td>
-        <td>
-         6:00 AM - 8:00 AM
-        </td>
-       </tr>
-       <tr>
-        <td>
-         Sunday
-        </td>
-        <td>
-         Special Waste
-        </td>
-        <td>
-         6:00 AM - 8:00 AM
-        </td>
-       </tr>
-      </tbody>
-     </table>
+      <table>
+          <?php include_once '../php/staff/functions.php';
+          $fetchSchedule = fetchSchedule();
+           ?>
+            <thead>
+                <tr>
+                  <th>
+                      Day
+                  </th>
+
+                  <th>
+                      Type Of Waste
+                  </th>
+
+                  <th>
+                      Time
+                  </th>
+
+                 
+                </tr>
+            </thead>
+            <tbody>
+              <?php foreach ($fetchSchedule AS $schedule): ?>
+              <tr>
+                <td>
+                    <?php echo htmlspecialchars($schedule['Day']) ?>
+                </td>
+
+                 <td>
+                    <?php echo htmlspecialchars($schedule['Waste']) ?>
+                </td>
+
+                 <td>
+                    <?php echo htmlspecialchars($schedule['Time']) ?>
+                </td>
+
+                
+              </tr>
+              <?php endforeach ?>
+            </tbody>
+        </table>
     </div>
    </div>
 </div>

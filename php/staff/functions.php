@@ -64,3 +64,35 @@ function deleteAnnouncement($announcementID){
  }
    
 
+function fetchSchedule (){
+    global $connections;
+
+    $sql = "SELECT *FROM schedule_tbl";
+    $result = mysqli_query($connections, $sql);
+
+    $fetchSchedule = [];
+
+    if($result){
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $fetchSchedule[] = $row;
+            }
+        }
+    }
+    return $fetchSchedule;
+}
+
+function editSchedule($scheduleID, $Waste, $Time){
+    global $connections;
+
+    $sql = "UPDATE schedule_tbl SET Waste = '$Waste', Time = '$Time' WHERE scheduleID = $scheduleID";
+    $result = mysqli_query($connections, $sql);
+
+    
+    if($result){
+        echo "<script>window.location.href='../../staff/wastecollectsched.php';</script>";
+    }
+    else{
+        echo "Error:" .$connections->error;
+    }
+}

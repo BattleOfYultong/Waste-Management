@@ -16,6 +16,7 @@ session_start();
   <link href="dashboard.css" rel="stylesheet"/>
    <link rel="stylesheet" href="../assets/fontawesome-free-6.5.2-web/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  
  </head>
  <body>
   <div class="container mt-5">
@@ -104,103 +105,160 @@ session_start();
      </h5>
     </div>
     <div class="card-body">
-     <table  class="table table-hover text-white">
-      <thead>
-       <tr>
-        <th>
-         Day
-        </th>
-        <th>
-         Type of Waste
-        </th>
-        <th>
-         Time
-        </th>
-       </tr>
-      </thead>
-      <tbody>
-       <tr>
-        <td>
-         Monday
-        </td>
-        <td>
-         Biodegradable
-        </td>
-        <td>
-         6:00 AM - 8:00 AM
-        </td>
-       </tr>
-       <tr>
-        <td>
-         Tuesday
-        </td>
-        <td>
-         Non-Biodegradable
-        </td>
-        <td>
-         6:00 AM - 8:00 AM
-        </td>
-       </tr>
-       <tr>
-        <td>
-         Wednesday
-        </td>
-        <td>
-         Biodegradable
-        </td>
-        <td>
-         6:00 AM - 8:00 AM
-        </td>
-       </tr>
-       <tr>
-        <td>
-         Thursday
-        </td>
-        <td>
-         Non-Biodegradable
-        </td>
-        <td>
-         6:00 AM - 8:00 AM
-        </td>
-       </tr>
-       <tr>
-        <td>
-         Friday
-        </td>
-        <td>
-         Biodegradable
-        </td>
-        <td>
-         6:00 AM - 8:00 AM
-        </td>
-       </tr>
-       <tr>
-        <td>
-         Saturday
-        </td>
-        <td>
-         Non-Biodegradable
-        </td>
-        <td>
-         6:00 AM - 8:00 AM
-        </td>
-       </tr>
-       <tr>
-        <td>
-         Sunday
-        </td>
-        <td>
-         Special Waste
-        </td>
-        <td>
-         6:00 AM - 8:00 AM
-        </td>
-       </tr>
-      </tbody>
-     </table>
+        <table>
+          <?php include_once '../php/staff/functions.php';
+          $fetchSchedule = fetchSchedule();
+           ?>
+            <thead>
+                <tr>
+                  <th>
+                      Day
+                  </th>
+
+                  <th>
+                      Type Of Waste
+                  </th>
+
+                  <th>
+                      Time
+                  </th>
+
+                  <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+              <?php foreach ($fetchSchedule AS $schedule): ?>
+              <tr>
+                <td>
+                    <?php echo htmlspecialchars($schedule['Day']) ?>
+                </td>
+
+                 <td>
+                    <?php echo htmlspecialchars($schedule['Waste']) ?>
+                </td>
+
+                 <td>
+                    <?php echo htmlspecialchars($schedule['Time']) ?>
+                </td>
+
+                 <td>
+                    <!-- Button trigger modal -->
+                    <button
+                      type="button"
+                      class="btn btn-primary  "
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalId"
+                      data-id = "<?php echo htmlspecialchars($schedule['scheduleID']) ?>"
+                      data-day= "<?php echo htmlspecialchars($schedule['Day']) ?>"
+                      data-waste = " <?php echo htmlspecialchars($schedule['Waste']) ?>"
+                      data-time = "<?php echo htmlspecialchars($schedule['Time']) ?>"
+                    >
+                      Edit
+                    </button>
+                </td>
+              </tr>
+              <?php endforeach ?>
+            </tbody>
+        </table>
     </div>
    </div>
 </div>
 </div>
+   <!-- Modal -->
+                    <form
+                      class="modal fade"
+                      id="modalId"
+                      tabindex="-1"
+                      role="dialog"
+                      aria-labelledby="modalTitleId"
+                      aria-hidden="true"
+                      action="../php/staff/executions.php"
+                      method="POST"
+                    >
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitleId">
+                              Edit Schedule
+                            </h5>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div class="modal-body">
+                            <div class="container-fluid">
+
+                              <!-- Announcement ID -->
+                              <div hidden class="input-group mb-3">
+                                  <span class="input-group-text"><i class="fa-solid fa-calendar-days"></i></span>
+                                  <input  id="scheduleID" type="text" id="" class="form-control" placeholder="Day" name="scheduleID" readonly>
+                              </div>
+                              <!--  -->
+                                 <!-- Announcement ID -->
+                              <div class="input-group mb-3">
+                                  <span class="input-group-text"><i class="fa-solid fa-calendar-days"></i></span>
+                                  <input  id="Day" type="text" id="" class="form-control" placeholder="Day" name="Day" readonly>
+                              </div>
+                              <!--  -->
+
+                                
+
+                                  <!-- Announcement ID -->
+                              <div class="input-group mb-3">
+                                  <span class="input-group-text"><i class="fa-solid fa-trash"></i></span>
+                                  <input id="Waste" type="text" id="" class="form-control" placeholder="Day" name="Waste" >
+                              </div>
+                              <!--  -->
+
+                                <!--  -->
+                              <div class="input-group mb-3">
+                                  <span class="input-group-text"><i class="fa-solid fa-clock"></i></span>
+                                  <input id="Time" type="text" id="" class="form-control" placeholder="Day" name="Time" >
+                              </div>
+                              <span style="color:black">Eg. 10:00 AM - 9:00 AM</span>
+                              <!--  -->
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-secondary"
+                              data-bs-dismiss="modal"
+                            >
+                              Close
+                            </button>
+                            <button type="submit" name="editSchedule" class="btn btn-primary">Save</button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                    
+
+<script src="../assets/bootstrap-5.3.3-dist/js/bootstrap.min.js"></script>
+ <script src="../assets/Jquery/jquery.js"></script>
+
+ <script>
+   function populateUserModal(button) {
+    // Retrieve data from button's attributes
+    const id = $(button).data('id');
+    const day = $(button).data('day')
+     const waste = $(button).data('waste')
+      const time = $(button).data('time')
+    // Populate modal fields
+    $('#scheduleID').val(id);
+    $('#Day').val(day);
+    $('#Waste').val(waste);
+     $('#Time').val(time);
+
+}
+
+// Event listener to open modal and populate data
+$(document).on('click', '[data-bs-target="#modalId"]', function () {
+    populateUserModal(this);
+});
+</script>
 </body>
    </html>

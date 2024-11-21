@@ -19,6 +19,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         EditAnnouncement($Announcement, $Description, $AnnouncementID);
 
     }
+
+    if(isset($_POST['editSchedule'])){
+        $scheduleID = $_POST['scheduleID'];
+        $Waste = $_POST['Waste'];
+        $Time = $_POST['Time'];
+
+        editSchedule($scheduleID, $Waste, $Time);
+    }
 }
 
 if($_SERVER['REQUEST_METHOD'] == 'GET'){

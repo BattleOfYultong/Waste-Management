@@ -150,3 +150,20 @@ table {
     font-size: 1.3em;
     font-weight: bold;
 }
+table {
+    flex: 1;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 20px 0;
+    color: black;
+    width: 100%;
+}
+table tr,td{
+    text-align: center;
+    padding: 10px;
+}
+table th{
+    padding: 10px;
+    font-weight: bold;
+}
