@@ -138,6 +138,7 @@ table {
     width: 90%;
     padding: 10px;
     min-height: 100px;
+    background-color: #fff;
 }
 .announcement-card-wrapper{
     display: flex;

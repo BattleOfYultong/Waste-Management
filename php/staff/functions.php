@@ -96,3 +96,22 @@ function editSchedule($scheduleID, $Waste, $Time){
         echo "Error:" .$connections->error;
     }
 }
+
+function fetchReports(){
+    global $connections;
+
+    $sql = "SELECT a.accountID, a.Name, a.Photo, r.reportID, r.Description, r.Location, r.accountID, 
+    r.Photo AS reportPhoto FROM report_tbl r INNER JOIN account_tbl a ON r.accountID = a.accountID";
+    $result = mysqli_query($connections, $sql);
+
+    $fetchReports = [];
+
+    if($result){
+        if(mysqli_num_rows($result) > 0){
+            while($row = mysqli_fetch_assoc($result)){
+                $fetchReports[] = $row;
+            }
+        }
+    }
+    return $fetchReports;
+}

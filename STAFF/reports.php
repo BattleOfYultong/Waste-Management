@@ -98,54 +98,34 @@ session_start();
          <div class="card mb-4">
     <div class="content">
     <div class="container">
+      <?php include_once '../php/staff/functions.php';
+        $fetchReports = fetchReports();
+      ?>
+      
       <div class="report-staff-boxes">
-         <h2>Report Non-Compliance</h2>
-
-            <div  class="complaint"> 
-            <h5>Report ID: 10291</h5> 
-            <p>Details: Di maayos ang pagtapon ng basura </p> 
-            <p>Address: bl18 l19 quezon City </p>
-            <p>Submitted by: User </p> 
-            <div class="buttons"> 
-                <button>Resolve</button> 
-                <button class="delete">Delete</button> 
-            </div> 
+      
+         <h2> Non-Compliance Reports</h2>
+  <?php foreach ($fetchReports AS $reports): ?>
+            <div style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;"  class="complaint"> 
+                <div style=" padding: 10px; display: flex; justify-content: center; align-items: center;" class="compliance-img">
+                      <img id="photoPreview" style="width: 250px; height: 250px; border: 2px solid black;" src="<?php echo htmlspecialchars('../uploads/' .$reports['reportPhoto']) ?>" alt="">
+                  </div>
+            <h5><?php echo htmlspecialchars($reports['reportID']) ?></h5> 
+            <p>Details: <?php echo htmlspecialchars($reports['Description']) ?> </p> 
+            <p>Address: <?php echo htmlspecialchars($reports['Location']) ?> </p>
+            <div style="display: flex; gap:10px; align-items: center; justify-content: flex-start; padding: 10px" class="user-photo-complaint">
+               <p>Submitted by: User </p> 
+               <img style="width: 50px; height:50px; border-radius: 50%; border: 2px solid black;" src="<?php echo htmlspecialchars('../uploads/' .$reports['Photo']) ?>" alt="">
+               <span style="font-weight:bold"><?php echo htmlspecialchars($reports['Name']) ?></span>
             </div>
 
-            <div  class="complaint"> 
-            <h5>Report ID: 10291</h5> 
-            <p>Details: Di maayos ang pagtapon ng basura </p> 
-            <p>Address: bl18 l19 quezon City </p>
-            <p>Submitted by: User </p> 
-            <div class="buttons"> 
-                <button>Resolve</button> 
-                <button class="delete">Delete</button> 
-            </div> 
+            
             </div>
+            <?php endforeach ?>
+           
+            
 
-
-            <div  class="complaint"> 
-            <h5>Report ID: 10291</h5> 
-            <p>Details: Di maayos ang pagtapon ng basura </p> 
-            <p>Address: bl18 l19 quezon City </p>
-            <p>Submitted by: User </p> 
-            <div class="buttons"> 
-                <button>Resolve</button> 
-                <button class="delete">Delete</button> 
-            </div> 
-            </div>
-
-
-            <div  class="complaint"> 
-            <h5>Report ID: 10291</h5> 
-            <p>Details: Di maayos ang pagtapon ng basura </p> 
-            <p>Address: bl18 l19 quezon City </p>
-            <p>Submitted by: User </p> 
-            <div class="buttons"> 
-                <button>Resolve</button> 
-                <button class="delete">Delete</button> 
-            </div> 
-            </div>
+           
             
 
             

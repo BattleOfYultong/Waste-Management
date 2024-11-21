@@ -124,12 +124,16 @@ session_start();
           ?>
         <table  class="table table-hover text-white">
           <?php foreach ($sqlFetchComplaint_user_store AS $complaints): ?>
-            <div class="complaint"> 
+            <div style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;" class="complaint"> 
             <h5>Complaint ID: <?php echo htmlspecialchars($complaints['complaintID']) ?></h5> 
             <p>Details: <?php echo htmlspecialchars($complaints['Description']) ?></p> 
             <p>Address: <?php echo htmlspecialchars($complaints['Address']) ?></p>
-            <p>Submitted by: <?php echo htmlspecialchars($complaints['Name']) ?></p> 
-            <div class="button"> 
+            <div style="display: flex; gap:10px; align-items: center; justify-content: flex-start; padding: 10px" class="user-photo-complaint">
+               <p>Submitted by:</p> 
+               <img style="width: 50px; height:50px; border-radius: 50%; border: 2px solid black;" src="<?php echo htmlspecialchars('../uploads/' .$complaints['Photo']) ?>" alt="">
+               <span style="font-weight:bold"><?php echo htmlspecialchars($complaints['Name']) ?></span>
+            </div>
+            <div class="button mt-1"> 
                 <button class="btn btn-primary">Resolve</button> 
                 <button class="btn btn-danger">Delete</button> 
             </div> 
